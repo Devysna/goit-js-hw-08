@@ -11,14 +11,16 @@ form.addEventListener('submit', onFormSubmit);
 
 
 function onFormDataInput() {
-    const formData = { email: email.value, message: message.value };
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
+    const formDataInput = { email: email.value, message: message.value };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(formDataInput));
 };      
 
 function onFormSubmit(e) {
-    e.preventDefault();  
-    e.currentTarget.reset();  
-    localStorage.removeItem(STORAGE_KEY);
+  e.preventDefault();
+  const formDataSubmit = { email: email.value, message: message.value };
+  console.log(formDataSubmit);
+  e.currentTarget.reset();  
+  localStorage.removeItem(STORAGE_KEY);
 };
 
 

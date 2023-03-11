@@ -11,13 +11,13 @@ function onCurrentTime(e) {
 };
 
 player
-    .setCurrentTime(localStorage.getItem('videoplayer-current-time'))
-    .catch(function(error) {
-    switch (error.name) {
-        case 'RangeError':            
-            break;
-
-        default:            
-            break;
-    }
-});
+    .setCurrentTime(localStorage.getItem('videoplayer-current-time') || 0)
+//    .catch(function(error) {
+//    switch (error.name) {
+//        case 'RangeError':            
+//            break;
+//
+//        default:            
+//            break;
+//    }
+//});
