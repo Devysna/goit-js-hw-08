@@ -17,8 +17,14 @@ function onFormDataInput() {
 
 function onFormSubmit(e) {
   e.preventDefault();
+
+  if (email.value === '' || message.value === '') {
+    alert('Fill in all the field!');
+  };
+
   const formDataSubmit = { email: email.value, message: message.value };
   console.log(formDataSubmit);
+
   e.currentTarget.reset();  
   localStorage.removeItem(STORAGE_KEY);
 };
