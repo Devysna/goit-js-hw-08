@@ -16,14 +16,15 @@ function onFormDataInput() {
 };      
 
 function onFormSubmit(e) {
-  e.preventDefault();
+  e.preventDefault();  
 
-  if (email.value === '' || message.value === '') {
+  if (!email.value || !message.value) {
     alert('Fill in all the field!');
+    return;
   };
 
   const formDataSubmit = { email: email.value, message: message.value };
-  console.log(formDataSubmit);
+  console.log(formDataSubmit);  
 
   e.currentTarget.reset();  
   localStorage.removeItem(STORAGE_KEY);
